@@ -1,25 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState,useEffect } from 'react';
+import axios, {isCancel, AxiosError} from 'axios';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [listagemdata, setListagemData]=useState([]);
+  async function listagemEventos(){
+    const response =await axios.get(
+      'http://127.0.0.1:8000/api/evento'
+    );
+    setListagemData(response.data.dados);
+    }
+    useEffect(() => {
+      listagemEventos();
+    },  [] )
+    return(
+      <>
+      <header>ThEvents</header>
+      {listagemdata.map((row)=>{      
+        return(          
+          <div className={'box'}>
+            <ul>
+              <il className={'events'}>Nome: {row.nome}</il><br/>
+              <il className={'events'}>Data: {row.data}</il><br/>
+              <il className={'events'}>Local: {row.local}</il><br/>
+              <il className={'events'}>Résponsavel: {row.responsavel}</il><br/>              
+            </ul>
+            <button>inscrever-se</button>
+        </div>        
+        );
+      }      
+        )}  
+      </>
+    );
+    
 }
-
 export default App;
