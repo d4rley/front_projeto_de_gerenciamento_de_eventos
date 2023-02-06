@@ -17,7 +17,9 @@ function App() {
     return(
       <>
       <header>ThEvents</header>
+      
       {listagemdata.map((row)=>{      
+        <div className={'lado'}>
         return(          
           <div className={'box'}>
             <ul>
@@ -26,11 +28,13 @@ function App() {
               <il className={'events'}>Local: {row.local}</il><br/>
               <il className={'events'}>Résponsavel: {row.responsavel}</il><br/>              
             </ul>
-            <button>inscrever-se</button>
+            <button className={'button'}>inscrever-se</button>
         </div>        
         );
-      }      
+        </div>  
+      }        
         )}  
+        
       </>
     );
     
