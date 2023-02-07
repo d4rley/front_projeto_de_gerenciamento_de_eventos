@@ -26,7 +26,7 @@ const Registration = () => {
 
   return (
     <div>
-      <h1>Registration</h1>
+      <h1>Inscrever-se no evento</h1>
       <label>
         nome:
         <input

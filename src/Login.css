@@ -1,0 +1,58 @@
+.login-container {
+    margin-top: 150px;
+    height: 200vh;
+    background-color: #42142a;
+  }
+  
+  /* Define the style for the login form */
+  .login-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+  }
+  
+  /* Define the style for the form title */
+  .form-title {
+    margin-top: 60px;
+    margin-left: 610px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Define the style for the form inputs */
+  .form-input {
+    margin-top: 20px;
+    width: 35%;
+    margin-left: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 16px;
+  }
+  
+  /* Define the style for the submit button */
+  .form-submit {
+    width: 10%;
+    margin-top: 60px;
+    margin-left: 575px;
+    padding: 10px;
+    background-color: #9c1736;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;    
+  }
+  
+  /* Define the hover effect for the submit button */
+  .form-submit:hover {
+    background-color: #3b001c;
+  }
