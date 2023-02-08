@@ -9,7 +9,7 @@ const Registration = () => {
   const [selectEvento, setSelectEvento]=useState([]);
   async function listagemEventos() {
     const response = await axios.get("http://127.0.0.1:8000/api/eventoselect");
-    setSelectEvento(response.data);
+    setSelectEvento(response.data.dados);
   }
   useEffect(() => {
     listagemEventos();
@@ -68,8 +68,8 @@ const Registration = () => {
           value={event_id}
           onChange={(event) => setEvent_id(event.target.value)}
         >
-          {selectEvento.map((opts, i) => {
-            return <option value={opts.id} key={i}>{opts.nome}</option>;
+          {setSelectEvento.map((opts, i) => {
+            return <option key={i}>{opts.name}</option>;
           })}
         </select>
       </label>

@@ -69,7 +69,7 @@ const Registration = () => {
           onChange={(event) => setEvent_id(event.target.value)}
         >
           {selectEvento.map((opts, i) => {
-            return <option value={opts.id} key={i}>{opts.nome}</option>;
+            return <option key={i}>{opts.nome}</option>;
           })}
         </select>
       </label>

@@ -6,13 +6,10 @@ const Registration = () => {
   const [email, setEmail] = useState("");
   const [numero, setNumero] = useState("");
   const [event_id, setEvent_id] = useState("");
-  const [selectEvento, setSelectEvento]=useState([]);
-  async function listagemEventos() {
-    const response = await axios.get("http://127.0.0.1:8000/api/eventoselect");
-    setSelectEvento(response.data);
-  }
   useEffect(() => {
-    listagemEventos();
+    fetch("http://127.0.0.1:8000/api/evento")
+      .then((data) => data.json())
+      .then((val) => setEvent_id(val));
   }, []);
   async function handleSubmit() {
     try {
@@ -68,8 +65,8 @@ const Registration = () => {
           value={event_id}
           onChange={(event) => setEvent_id(event.target.value)}
         >
-          {selectEvento.map((opts, i) => {
-            return <option value={opts.id} key={i}>{opts.nome}</option>;
+          {event_id.map((opts, i) => {
+            return <option key={i}>{opts.name}</option>;
           })}
         </select>
       </label>
